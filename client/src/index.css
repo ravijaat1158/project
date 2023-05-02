@@ -1,8 +1,58 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-.navbar-nav-scroll{
-    --bs-scroll-height : 100px
+#components-layout-demo-responsive .logo {
+  height: 32px;
+  margin: 16px;
+  background: rgba(255, 255, 255, 0.2);
+}
+.headerTitle {
+  /* font-family: 'Playfair Display', serif; */
+  font-family: "Poppins", sans-serif;
+  color: rgb(5, 69, 71) !important;
+  font-size: 40px;
+  font-weight: bolder;
+}
+
+.HeaderTop {
+  display: flex;
+  flex-direction: row;
+  /* padding-right: 120px; */
+  justify-content: space-around;
+}
+.dropdown-toggle {
+  width: 225px;
+}
+.force-scroll {
+  padding: 0px;
+  margin: 0px;
+  overflow-y: scroll;
+
+  height: 300px;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.homepageDetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 4px;
+  text-align: center;
+  padding: 4px 10px;
+  background-color: aliceblue;
+}
+.form-selects {
+  border: 1px solid black;
+  border-radius: 1%;
+  padding: 1px;
+}
+
+.form-selects {
+  width: 200px;
 }

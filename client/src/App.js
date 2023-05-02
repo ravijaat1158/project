@@ -1,12 +1,17 @@
-import React from 'react';
-import Layout from "./Components/Layouts/Layout.js";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import SelectedCountry from "./pages/SelectedCountry";
 
 function App() {
-    return (
-        <Layout>
-            <h1>Body</h1>
-        </Layout>
-  )
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/api/v1/:region/:country" element={<SelectedCountry />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
