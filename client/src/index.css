@@ -36,7 +36,7 @@
 .column {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .homepageDetails {
   display: flex;
@@ -56,3 +56,57 @@
 .form-selects {
   width: 200px;
 }
+
+.heilightedText{
+  font-weight: bold;
+}
+.column1{
+  margin: 10px;
+  margin-top: 40px !important;
+}
+
+.lineGraph{
+  display: flex;
+  justify-content: center;
+  /* border: 1px solid black; */
+  width: 50%;
+  margin-left: 10px;
+  height: 250px;
+  padding: 5px !important;
+  box-shadow: 5px 10px #dfdcdc;
+  background-color: rgb(212, 243, 245);
+}
+.PIECHART{
+  display: block;
+  width: 120px;
+  box-shadow: 5px 10px #dfdcdc;
+  background-color: rgb(212, 243, 245);
+}
+/* .{
+color: #eded3c;
+} */
+.SearchBar{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  
+}
+.SearchBar h5{
+  padding-top: 7px;
+  padding-right: 10px;
+}
+
+.container{
+  height: 50vh;
+}
+
+.upperSideBox{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 0px;
+  background-color: aquamarine;
+  margin-bottom: 5px;
+}
+

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Headers from "./Header";
 import { Layout, theme, Select } from "antd";
@@ -13,13 +13,17 @@ const Structure = ({ children, title, description, keywords, author }) => {
   const navigate = useNavigate();
   const regions = useRegions();
   const [regionCountries, setRegionCountries] = useState([]);
-  const [selectedRegion, setSelectedRegion] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("");
 
   const setRegionCountriesfunction = async () => {
-    const { data } = await axios.get(`/api/v1/region/${selectedRegion}`);
-    setRegionCountries(data?.countries);
+    const { data } = await axios.get(`/api/v1/countries`);
+    setRegionCountries(data.countries);
   };
+
+  useEffect(() => {
+    setRegionCountriesfunction();
+  }, []);
+  
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -36,8 +40,9 @@ const Structure = ({ children, title, description, keywords, author }) => {
         <Layout>
           <Headers />
           <Content
+            className="Body"
             style={{
-              margin: "24px 16px 0",
+              margin: "24px 30px 0",
             }}
           >
             <div
@@ -48,10 +53,19 @@ const Structure = ({ children, title, description, keywords, author }) => {
               }}
             >
               <div className="column">
-                <div className="">
-                  <h5>Filters On Basis Of : </h5>{" "}
+                <div>
+                  <h3
+                    style={{ cursor: "pointer" }}
+                    onClick={() => {
+                      navigate("/");
+                    }}
+                  >
+                    Home
+                  </h3>
                 </div>
-                <Select
+                <div className="text-center  SearchBar">
+                  <h5 >Filters On Basis Of Country: </h5>{" "}
+                  {/* <Select
                   bordered={false}
                   placeholder="Select a Region"
                   size="large"
@@ -61,30 +75,31 @@ const Structure = ({ children, title, description, keywords, author }) => {
                     setSelectedRegion(value);
                     setRegionCountriesfunction();
                   }}
-                >
+                  >
                   {regions?.map((c) => (
                     <Option key={c} value={c}>
-                      {c}
+                    {c}
                     </Option>
-                  ))}
-                </Select>
-                <Select
-                  bordered={false}
-                  placeholder="Select a Country"
-                  size="large"
-                  showSearch
-                  className="form-selects"
-                  onChange={(value) => {
-                    setSelectedCountry(value);
-                    navigate(`/api/v1/${selectedRegion}/${value}`);
-                  }}
-                >
-                  {regionCountries?.map((c) => (
-                    <Option key={c} value={c}>
-                      {c}
-                    </Option>
-                  ))}
-                </Select>
+                    ))}
+                  </Select> */}
+                  <Select
+                    bordered={false}
+                    placeholder="Select a Country"
+                    size="large"
+                    showSearch
+                    className="form-selects"
+                    onChange={(value) => {
+                      setSelectedCountry(value);
+                      navigate(`/api/v1/${value}`);
+                    }}
+                  >
+                    {regionCountries?.map((c) => (
+                      <Option key={c} value={c}>
+                        {c}
+                      </Option>
+                    ))}
+                  </Select>
+                </div>
               </div>
               <hr />
               {children}
