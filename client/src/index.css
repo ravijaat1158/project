@@ -57,15 +57,15 @@
   width: 200px;
 }
 
-.heilightedText{
+.heilightedText {
   font-weight: bold;
 }
-.column1{
+.column1 {
   margin: 10px;
   margin-top: 40px !important;
 }
 
-.lineGraph{
+.lineGraph {
   display: flex;
   justify-content: center;
   /* border: 1px solid black; */
@@ -76,7 +76,7 @@
   box-shadow: 5px 10px #dfdcdc;
   background-color: rgb(212, 243, 245);
 }
-.PIECHART{
+.PIECHART {
   display: block;
   width: 120px;
   box-shadow: 5px 10px #dfdcdc;
@@ -85,22 +85,21 @@
 /* .{
 color: #eded3c;
 } */
-.SearchBar{
+.SearchBar {
   display: flex;
   flex-direction: row;
   text-align: center;
-  
 }
-.SearchBar h5{
+.SearchBar h5 {
   padding-top: 7px;
   padding-right: 10px;
 }
 
-.container{
+.container {
   height: 50vh;
 }
 
-.upperSideBox{
+.upperSideBox {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -109,4 +108,3 @@ color: #eded3c;
   background-color: aquamarine;
   margin-bottom: 5px;
 }
-

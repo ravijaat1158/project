@@ -29,15 +29,14 @@ router.get("/regions", getAllRegions);
 router.get("/region/:region", getCountriesOfSpecificRegion);
 
 // get Total sector counts
-router.get('/total/sectors', getAllSectors);
+router.get("/total/sectors", getAllSectors);
 
 // get total regions 1000 enetites
 router.get("/total/regions", getAllRegionsRepeatition);
 
-router.get('/total/pestles', getAllPestleRepeatition);
+router.get("/total/pestles", getAllPestleRepeatition);
 
 // get data by country
-router.get('/:country', getDataByCountry);
-
+router.get("/:country", getDataByCountry);
 
 export default router;

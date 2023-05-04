@@ -1,10 +1,10 @@
-import React from 'react';
-import { useState , useEffect } from 'react';
-import { PieChart, Pie , Tooltip, Legend } from 'recharts';
-import axios from 'axios';
+import React from "react";
+import { useState, useEffect } from "react";
+import { PieChart, Pie, Tooltip, Legend } from "recharts";
+import axios from "axios";
 
 const PIEChart = () => {
-    const [allData, setAllData] = useState([]);
+  const [allData, setAllData] = useState([]);
   const [sector, setSector] = useState([]);
   const [graphData, setGraphData] = useState([]);
 
@@ -30,9 +30,7 @@ const PIEChart = () => {
           Entries_in_Database: elementCounts[i][1],
         });
       } else {
-        
         array.push({
-          
           name: elementCounts[i][0],
           Entries_in_Database: elementCounts[i][1],
         });
@@ -49,22 +47,22 @@ const PIEChart = () => {
     setSectorFunction();
   }, [allData]);
 
-    return (
-      <PieChart className="PIECHART" width={300} height={250}>
-        <Pie
-          data={sector}
-          dataKey="Entries_in_Database"
-          nameKey="name"
-          cx="50%"
-          cy="50%"
-          outerRadius={100}
-          innerRadius={65}
-          fill="#eded3c"
-        />
-        {/* <Legend/> */}
-            <Tooltip />
-      </PieChart>
-    );
-}
+  return (
+    <PieChart className="PIECHART" width={300} height={250}>
+      <Pie
+        data={sector}
+        dataKey="Entries_in_Database"
+        nameKey="name"
+        cx="50%"
+        cy="50%"
+        outerRadius={100}
+        innerRadius={65}
+        fill="#eded3c"
+      />
+      {/* <Legend/> */}
+      <Tooltip />
+    </PieChart>
+  );
+};
 
 export default PIEChart;

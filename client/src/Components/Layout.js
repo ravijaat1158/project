@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Headers from "./Header";
 import { Layout, theme, Select } from "antd";
@@ -23,7 +23,7 @@ const Structure = ({ children, title, description, keywords, author }) => {
   useEffect(() => {
     setRegionCountriesfunction();
   }, []);
-  
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -64,7 +64,7 @@ const Structure = ({ children, title, description, keywords, author }) => {
                   </h3>
                 </div>
                 <div className="text-center  SearchBar">
-                  <h5 >Filters On Basis Of Country: </h5>{" "}
+                  <h5>Filters On Basis Of Country: </h5>{" "}
                   {/* <Select
                   bordered={false}
                   placeholder="Select a Region"

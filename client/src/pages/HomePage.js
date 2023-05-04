@@ -50,7 +50,6 @@ const HomePage = () => {
     setSector(array);
   };
 
-
   useEffect(() => {
     getAllData();
   }, []);
