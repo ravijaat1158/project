@@ -4,11 +4,12 @@ import cors from "cors";
 import morgan from "morgan";
 import connectDB from "./db/connectDb.js";
 import Router from "./routes/getDataRoutes.js";
+import path from "path";
+import { fileURLToPath } from "url";
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
-import path from "path";
-import { fileURLToPath } from "url";
 
 // config middlewares
 app.use(express.json());
